@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <p>Welcome to <%= title %></p>
+    <table class="table table-hover span12">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>NAME</th>
+              <th>AGE</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% testlist.forEach(function(data){ %>
+              <tr>
+                <td><%= data.id %></td>
+                <td><%= data.name %></td>
+                <td><%= data.age %></td>
+                <td><a href="update?id=<%= data.id %>">修改</a>&nbsp;&nbsp;<a href="delete?id=<%= data.id %>">删除</a></td>
+              </tr>
+            <% }) %>
+            </tbody>
+          </table>
+          <p><a href="login">新增</a></p>
+  </body>
+</html>
